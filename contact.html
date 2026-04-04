@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitt Lounge | Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html" class="text-logo">
+            <span class="logo-box">FL</span>
+            <span class="logo-text">FITT LOUNGE</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+      </div>
+    </nav>
+    <section class="section-padding dark-bg">
+      <div class="container layout-grid">
+        <div class="contact-info">
+          <h2 class="section-title">
+            Get In <span class="highlight">Touch</span>
+          </h2>
+          <p>
+            Ready to start? Drop by for a visit or call us for membership
+            inquiries.
+          </p>
+
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt highlight"></i>
+            <div>
+              <h4>Location</h4>
+              <p>
+                3rd Floor, Near Block C, Gurudwara, Naraina Vihar Club, Naraina
+                Vihar, Delhi-110028
+              </p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-clock highlight"></i>
+            <div>
+              <h4>Operating Hours</h4>
+              <p>Monday - Saturday: 6:00 AM - 10:00 PM</p>
+              <p>Sunday: 8:00 AM - 8:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form
+            onsubmit="
+              event.preventDefault();
+              alert('Inquiry sent!');
+            "
+          >
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="tel" placeholder="Your Phone Number" required />
+            <select required>
+              <option value="" disabled selected>Interested In...</option>
+              <option value="gym">General Gym Membership</option>
+              <option value="pt">Personal Training</option>
+            </select>
+            <button type="submit" class="btn-primary" style="width: 100%">
+              Claim Free Trial
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div
+          class="footer-logo text-logo"
+          style="margin-bottom: 20px; justify-content: center"
+        >
+          <span class="logo-box">FL</span>
+          <span class="logo-text">FITT LOUNGE</span>
+        </div>
+        <p>&copy; 2026 Fitt Lounge Naraina Vihar. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
