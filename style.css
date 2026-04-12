@@ -17,12 +17,18 @@
   box-sizing: border-box;
 }
 
+/* 1. Strictly lock the screen width to prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.6;
-  overflow-x: hidden;
   /* Page Transition Animation */
   animation: pageLoad 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -347,42 +353,6 @@ footer {
   color: var(--gold);
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .layout-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    background-color: var(--bg-secondary);
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    transition: right 0.4s ease;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-  .nav-links li {
-    margin: 25px 0;
-  }
-  .hamburger {
-    display: block;
-  }
-}
-
 /* Contact Links */
 .contact-link {
     color: var(--text-main);
@@ -399,4 +369,44 @@ footer {
     margin-left: 5px;
     margin-top: 0 !important;
     margin-right: 0 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* 2. Mobile Menu Overlay Fix */
+@media (max-width: 768px) {
+    .hamburger { 
+        display: block !important; 
+    }
+    
+    .nav-links { 
+        position: fixed !important; 
+        top: 0; 
+        right: -100%; /* Hides menu safely */
+        height: 100vh;
+        width: 250px; /* Limits menu width */
+        background-color: var(--bg-secondary); 
+        flex-direction: column !important; 
+        justify-content: center !important;
+        transition: right 0.4s ease !important; 
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+    
+    .nav-links.active { 
+        right: 0 !important; 
+    }
+    
+    .nav-links li { 
+        margin: 25px 0 !important; 
+        display: block !important;
+    }
 }
