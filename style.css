@@ -381,7 +381,7 @@ footer {
   }
 }
 
-/* 2. Mobile Menu Overlay Fix */
+/* 2. Mobile Menu Overlay Fix (Using Transform) */
 @media (max-width: 768px) {
     .hamburger { 
         display: block !important; 
@@ -390,19 +390,20 @@ footer {
     .nav-links { 
         position: fixed !important; 
         top: 0; 
-        right: -100%; /* Hides menu safely */
+        right: 0 !important; /* Anchor it to the right edge */
+        transform: translateX(100%); /* Pushes it exactly 100% of its own width off-screen */
         height: 100vh;
-        width: 250px; /* Limits menu width */
+        width: 250px; 
         background-color: var(--bg-secondary); 
         flex-direction: column !important; 
         justify-content: center !important;
-        transition: right 0.4s ease !important; 
+        transition: transform 0.4s ease !important; /* Smooth slide animation */
         z-index: 1000;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
     
     .nav-links.active { 
-        right: 0 !important; 
+        transform: translateX(0); /* Slides it back into view when active */
     }
     
     .nav-links li { 
